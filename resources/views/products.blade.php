@@ -57,29 +57,9 @@
 </head>
 
 <body>
-<h1>Product List</h1>
-    <ul id="productList"></ul>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('http://127.0.0.1:8000/api/getProducts')
-                .then(response => response.json())
-                .then(products => {
-                    const productList = document.getElementById('productList');
-                    
-                    products.forEach(product => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = ${product.name} - ${product.price};
-                        productList.appendChild(listItem);
-                    });
-                })
-                .catch(error => console.error('Error fetching products:', error));
-        });
-    </script>
-
   <h2>Products</h2>
 
-  @foreach ($product as $row)
+  @foreach ($products as $row)
   <div class="column">
     <div class="card">
       <h1>{{ $row['title'] }}</h1>
