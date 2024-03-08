@@ -21,6 +21,6 @@ class ProductController extends Controller
         return view('products', compact('products'));
        // $products = Product::with('variant')->get();
 
-        return response()->json($products);
+        //return response()->json($products);
     }
 }
